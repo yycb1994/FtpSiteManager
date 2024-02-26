@@ -33,8 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,13 +51,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileInfo.cs" />
-    <Compile Include="FtpOperation.cs" />
+    <Compile Include="FileInformation.cs" />
+    <Compile Include="FtpHelper.cs" />
+    <Compile Include="FtpInvoke.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="FtpInvokeConfig\Delete\FtpDeleteAllConfig.json" />
+    <None Include="FtpInvokeConfig\Delete\FtpDeleteFoldersConfig.json" />
+    <None Include="FtpInvokeConfig\Download\FtpDownloadFileConfig.json" />
+    <None Include="FtpInvokeConfig\Download\FtpDownloadFolderConfig.json" />
+    <None Include="FtpInvokeConfig\Move\FtpMoveFolderConfig.json" />
+    <None Include="FtpInvokeConfig\Move\FtpMoveFilesConfig.json" />
+    <None Include="FtpInvokeConfig\Query\QueryAllConfig.json" />
+    <None Include="FtpInvokeConfig\Delete\FtpDeleteFilesConfig.json" />
+    <None Include="FtpInvokeConfig\Query\RecursiveQueryAllConfig.json" />
+    <None Include="FtpInvokeConfig\Upload\FtpUploadFoldersConfig.json" />
+    <None Include="FtpInvokeConfig\Upload\FtpUploadFolderConfig.json" />
+    <None Include="FtpInvokeConfig\Upload\FtpUploadFileConfig.json" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
